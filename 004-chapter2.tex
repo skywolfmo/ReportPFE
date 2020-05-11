@@ -1,0 +1,191 @@
+% @Author: Taha Bouhsine
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CHAPTER                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{mtc}{8}
+\chapter{Analysis And Design}%
+\label{chap:chapter_two}
+\minitoc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{General description of the platform}
+
+% \begin{description}\addtolength{\itemsep}{-0.35\baselineskip}%
+%   \item[\textbullet~\bfseries Menu Item] \hfill \\%
+%         Menu Description.~\\%
+%         {\textbf{Focus topics:~}\emph{Topic one, topic two, topic three, ...}}%
+%         %
+%   \item[\textbullet~\bfseries Menu Item] \hfill \\%
+%         Menu Description.~\\%
+%         {\textbf{Focus topics:~}\emph{Topic one, topic two, topic three, ...}}%
+%         %
+%   \item[\textbullet~\bfseries Menu Item] \hfill \\%
+%         Menu Description.~\\%
+%         {\textbf{Focus topics:~}\emph{Topic one, topic two, topic three, ...}}%
+% \end{description}
+
+% Also bullets such as:%
+% \begin{itemize}\addtolength{\itemsep}{-0.35\baselineskip}%
+%   \item One%
+%   \item Two%
+%   \item Three%
+%   \item Four%
+%   \item \ldots%
+% \end{itemize}%
+% %
+
+\section{Specification of requirements}
+We will proceed according to the UML method which consists of identifying and modeling the various business processes in order to easily migrate to an object architecture from a static and dynamic point of view. This analysis presents a total abstraction being independent of any technology or implementation.
+
+The specification of the needs will allow us to have a better approach of the users, the functionalities, and the relationship between the two. It will be in the form of a use case. For this we will proceed as follows:
+
+Identification of requirements.
+Identification of the actors of the system.
+Identification of use cases.
+Description of use cases.
+Grouping of use cases into packages.
+
+
+\subsection{requirements}
+The requirements that we have put on the end-product were divided into basic functionalities and optional functionalities.
+The User’s basic functionalities are:
+\begin{enumerate}
+    \item
+          Account management: create an account, login, profile, settings, personal info,
+          personal dashboard.
+    \item
+          Start a campaign: send in a proposal for a campaign (webform).
+    \item
+          Share function: functionality so that a campaign can be shared within social networks, such as Facebook, Instagram, LinkedIn, Twitter, and potentially Pinterest and Google.
+    \item
+          Contribution invitation: functionality to send out concrete requests to contribute a certain amount
+          within the personal social network.
+    \item
+          Payment function: contributor should be able to pay their ticket through Credit Card.
+    \item
+          Review function: contributors should have the opportunity to give reviews about and react to events
+          that have taken place.
+    \item
+          Countdown timer: a timer that shows how much time a campaign has left until it closes.
+    \item
+          Current overview: each campaign should show for example the number of tickets sold/amount of investors, the amount of money raised so far and the goal amount to be raised.
+\end{enumerate}
+
+
+The User’s optional functionalities are:
+
+\begin{enumerate}
+    \item
+          Personalized recommendations (recommender system): the system will advise, suggest, or give concrete offers. Logged-in visitors see a personalized recommendation based on social profiles and the
+          platform’s web page content and actions.
+    \item
+          Share option via Whatsapp
+    \item
+          Online helpdesk: chat possibility with a helpdesk worker.
+    \item
+          Communication tools: communication possibilities with other members and/or the organization of an
+          event via chat.
+    \item
+          Connection with social media: e.g. Facebook application for special opportunities and/or campaigns
+          that enabled even more interaction with the target group.
+    \item
+          Social login: login with a social account.
+    \item
+          Wallet: deposit money in your personal wallet, which enables you to make several contributions by
+          paying with the money in your wallet.
+    \item
+          Recruit function: a tool to gather more contributors. A contributor can share a campaign within their
+          own personal social networks.
+    \item
+          Notifications: reminders and/or messages related to upcoming events and updates of events.
+    \item
+          Mobile App: extra functionalities through the use of a camera and GPS on the actual event: e.g. picture/video upload to the website or live visitor numbers.
+
+    \item
+          Agenda/calender: an overview that shows which events will take place on which dates (including events
+          that have already taken place).
+    \item
+          Newsletter: send an overview of the events to members of the platform community or a certain
+          selection.
+    \item
+          Promotion function: functionality to share and promote events on different levels: community (everyone), events (only participants of a specific event), social media (within social networks).
+    \item
+          Campaign management: management tools for the event organization.
+    \item
+          Reports/statistics: data analyses, tools for advanced analysis of the web page visits.
+\end{enumerate}
+
+
+
+
+\subsection{Identification of actors}
+In UML we don't use the term users but actors. A player in a system is an entity external to this system that interacts (data entry, reception of information, etc.) with it. The actors make it possible to define the interface that the system will offer to its environment. And also the actor groups together several users who have the same role. And to find actors it will be necessary to identify the different roles that will have to play its users.
+In order to facilitate identification, we can imagine this: everything that is outside and interacts with the system is an actor, everything that is inside is a functionality to be realized.
+The different actors of the studied system are \ref{fig:sahemactors}:
+\begin{figure}[!ht]
+      \centering
+      \includegraphics[scale=0.60]{assets/Actors.png}
+      \caption{Sahem Platform Actors}
+      \label{fig:sahemactors}
+\end{figure}
+\begin{enumerate}
+    \item  Creator.
+    \item  Funder will be merged with Creators.
+    \item  Administrator.
+    \item  Visitor.
+\end{enumerate}
+
+\subsection{Identification of objectives and use cases}
+A use case described in the form of actions and reactions, the behavior of a system from a user point of view. It must add value to the actor concerned. Each use case contains a list of functionalities that will be detailed in the following section.
+
+We will first determine the objectives that will allow us to deduce the use cases and all this:
+\begin{longtable}{|m{10em}|m{10em}|m{10em}|}\hline
+    \multirow{4}{*}{Administration management} & \multirow{2}{*}{Authentication}       & Authentication                          \\\cline{3-3}
+                                               &                                       & Registration                            \\\cline{2-3}
+                                               & \multirow{5}{*}{User Maintainance}    & Add User                                \\\cline{3-3}
+                                               &                                       & Modify User                             \\\cline{3-3}
+                                               &                                       & Delete User                             \\\cline{3-3}
+                                               &                                       & Consult the information of a user       \\\cline{3-3}
+                                               &                                       & Show the list of users                  \\\cline{2-3}
+                                               & \multirow{2}{*}{Roles}                & Show users by roles                     \\\cline{3-3}
+                                               &                                       & Modify a user's role                    \\\cline{2-3}
+                                               & \multirow{1}{*}{Statistics}           & Access the statistics of the plateforme \\\hline
+    \multirow{4}{*}{Fundraiser's managment}    & \multirow{3}{*}{Creator's Monitoring} & Personal information modification       \\\cline{3-3}
+                                               &                                       & Access a creator profile                \\\cline{3-3}
+                                               &                                       & Desactivate an Account                  \\\cline{2-3}
+                                               & \multirow{2}{*}{Funds Monitoring}     & Fund a project                          \\\cline{3-3}
+                                               &                                       & Confirm funding a project               \\\cline{3-3}
+                                               &                                       & List of previous funds                  \\\cline{2-3}
+                                               & \multirow{6}{*}{Projects Monitoring}  & Create a project                        \\\cline{3-3}
+                                               &                                       & Edit a project                          \\\cline{3-3}
+                                               &                                       & Delete a project                        \\\cline{3-3}
+                                               &                                       & Like a project                          \\\cline{3-3}
+                                               &                                       & Share a project                         \\\cline{3-3}
+                                               &                                       & Comment on a project                    \\\cline{2-3}
+                                               & \multirow{2}{*}{Search}               & Search a project by name                \\\cline{3-3}
+                                               &                                       & Show Fundraisers by category            \\\hline
+    \multirow{2}{*}{Payment management}        & \multirow{1}{*}{Billing}              & Show the bill                           \\\cline{2-3}
+                                               & \multirow{1}{*}{Online Payment}       & Choose payment method                   \\\hline
+
+    \caption{Identification of objectives and use cases}
+    \label{tab:id_objec_uc}
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analyse fonctionnelle}
+usecase
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analyse dynamique}
+activity  squence
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analyse structurelle}
+class
