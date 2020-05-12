@@ -4,142 +4,154 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CHAPTER                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{mtc}{11}
+\setcounter{mtc}{9}
 
-\chapter{Realization, GUI And Tests}%
-\label{chap:chapter_four}
+\chapter{Technical and environmental study}%
+\label{chap:chapter_tree}
 \minitoc
+\section{Capture of technical needs}
+The capture of technical needs identifies all the constraints and the choices dimensioning the design of the system.
 
-\section{Hardware environments}
+The tools and materials selected as well as the management of integration constraints generally conditioning the prerequisites of general architecture.
+
+The capture of technical needs is as follows:
+\begin{itemize}\addtolength{\itemsep}{-0.35\baselineskip}
+      \item
+            Capturing software specifications.
+
+      \item
+            Capturing specifications related to hardware configuration.
+
+\end{itemize}
+
+\subsection{Capturing software specifications}
+Once the hardware specifications have been determined, we move on to the non-functional specifications, in other words, technical or software specifications.
+
+These are technical features that the system will provide to the user regardless of the business or functional term.
+
+We will, therefore, list a list of technical functionalities that our system will be able to provide and offer to users, which is why we have introduced the concepts of operator and technical use cases:
+
+\paragraph{Technical actors}
+Also called "technical actors" of the system, these are the actors who benefit from the technical functionalities of the system:
+\begin{itemize}\addtolength{\itemsep}{-0.35\baselineskip}
+      \item
+            User: These are the people who use the system functionality in one way or another.
+      \item
+            Administrator: this is the person responsible for managing all the management of the platform as well as that of the users.
+\end{itemize}
+
+\paragraph{Identification of technical use cases}
+
+\begin{longtable}{|m{10em}|m{10em}|m{10em}|}\hline
+      \multirow{4}{*}{Security management} & \multirow{5}{*}{Authentication}          & Register                                                    \\\cline{3-3}
+                                           &                                          & Login                                                       \\\cline{3-3}
+                                           &                                          & Reset Password                                              \\\cline{3-3}
+                                           &                                          & Change password                                             \\\cline{3-3}
+                                           &                                          & Logout                                                      \\\cline{2-3}
+                                           & \multirow{1}{*}{Confidentiality}         & Role management                                             \\\cline{2-3}
+                                           & \multirow{2}{*}{Secure payment}          & Send Payment                                                \\\cline{3-3}
+                                           &                                          & Receive Payment                                             \\\cline{2-3}
+                                           & \multirow{2}{*}{Backup and restore}      & Save the database                                           \\\cline{3-3}
+                                           &                                          & Restore the database                                       \\\hline
+      \multirow{7}{*}{Data managment}      & \multirow{1}{*}{Dynamic data}            & Dynamic data dispaly                                       \\\cline{2-3}
+                                           & \multirow{1}{*}{Integrity}               & Simultaneous updates                                       \\\cline{2-3}
+                                           & \multirow{1}{*}{Interoperability}        & Network deployment                                         \\\cline{2-3}
+                                           & \multirow{1}{*}{Compatibility}           & Run on different browsers and platforms                    \\\cline{2-3}
+                                           & \multirow{2}{*}{History}                 & Get all the user created projects fundraised               \\\cline{3-3}
+                                           &                                          & Get all the user created projects fundraised               \\\cline{2-3}
+                                           & \multirow{1}{*}{Statistics}              & Display platform statistics                                \\\cline{2-3}
+                                           & \multirow{1}{*}{Fund}                    & Fund migration from anonymous user                         \\\hline
+      \multirow{4}{*}{Help management}     & \multirow{2}{*}{Gestion des erreurs}     & Logging Viewing types of errors                            \\\cline{3-3}
+                                           &                                          & Send the error by email to the administrator               \\\cline{2-3}
+                                           & \multirow{1}{*}{Aide en ligne}           & Consult the user help Guide                                \\\cline{2-3}
+                                           & \multirow{1}{*}{Notifications}           & Confirmation or error message                              \\\cline{2-3}
+                                           & \multirow{1}{*}{Mails}                   & Sending emails                                             \\\hline
+      \multirow{2}{*}{Payment management}  & \multirow{1}{*}{Multi-currency platform} & Choose a currency for purchase and payment                 \\\cline{2-3}
+                                           & \multirow{1}{*}{Payment method}          & Possibility to choose a payment method                     \\\hline
+      \multirow{3}{*}{Optimization}        & \multirow{1}{*}{Navigation}              & Nested operations                                          \\\cline{2-3}
+                                           & \multirow{1}{*}{Sharing}                 & Possibility to share your donation                         \\\cline{2-3}
+                                           & \multirow{1}{*}{Theming}                 & Possibility to switch themes between dark and light themes \\\hline
+
+      \caption{Identification of technical objectives and use cases}
+      \label{tab:id_tech_objec_uc}
+\end{longtable}
+
+% \paragraph{ Technical description use cases }
+% View all the use cases described in the appendix \ref{sec:ucd}
 
 
-\section{Development Environments}
-\subsection{Design And Planing}
-
-\paragraph{PlantUml}
-PlantUML is an open-source tool allowing users to create UML diagrams from plain text language. The language of PlantUML is an example of a Domain-specific language. It uses Graphviz software to lay out its diagrams. It has been used to allow blind students to work with UML. PlantUML also helps blind software engineers to design and read UML diagrams.
 
 
-\paragraph{Gantt chart}
-A Gantt chart is a horizontal bar chart that visually represents a project plan over time. Modern Gantt charts typically show us the status of—as well as who’s responsible for—each task in the project.
+\section{Adopted Architecture}
 
-In other words, a Gantt chart is a super-simple way to keep us out of a project pinch!
+\subsection{Model View Controller Design Pattern}
 
-What are the key parts of a Gantt chart?
-A Gantt chart is made up of several different elements:
+The Model View Controller (MVC) design pattern specifies that an application consists of a data model, presentation information, and control information. The pattern requires that each of these be separated into different objects.
+
+MVC is more of an architectural pattern, but not for a complete application. MVC mostly relates to the UI / interaction layer of an application. We’re still going to need a business logic layer, maybe some service layer and data access layer.
 \begin{enumerate}
-      \item
-            Tasklist: Runs vertically down the left of the Gantt chart to describe project work and may be organized into groups and subgroups
-      \item
-            Timeline: Runs horizontally across the top of the Gantt chart and shows months, weeks, days, and years
-      \item
-            Dateline: A vertical line that highlights the current date on the Gantt chart
-      \item
-            Bars: Horizontal markers on the right side of the Gantt chart that represent tasks and show progress, duration, and start and end dates
-      \item
-            Milestones: Yellow diamonds that call out major events, dates, decisions, and deliverables
-      \item
-            Dependencies: Light gray lines that connect tasks that need to happen in a certain order
-      \item
-            Progress: Shows how far along work is and may be indicated by \% Complete and/or bar shading
-      \item
-            Resource assigned: Indicates the person or team responsible for completing a task
+      \item Model contains only the pure application data, it contains no logic describing how to present the data to a user.
+      \item View presents the model’s data to the user. The view knows how to access the model’s data, but it does not know what this data means or what the user can do to manipulate it.
+      \item Controller exists between the view and the model. It listens to events triggered by the view (or another external source) and executes the appropriate reaction to these events. In most cases, the reaction is to call a method on the model. Since the view and the model are connected through a notification mechanism, the result of this action is then automatically reflected in the view.
 \end{enumerate}
 
+\begin{figure}[!ht]
+      \center
+      \includegraphics[scale=0.30]{assets/mvc.jpg}
+      \caption{Model View Controller}
+      \label{fig:mvc}
+\end{figure}
+% %%%%%%%
+\subsection{Representational State Transfer Architecture}
+REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server. We will go into what these terms mean and why they are beneficial characteristics for services on the Web.
+%%%%
+\subsection{Software as a Service}
+Software as a Service or SaaS , which allows us to set up services, such as application servers and databases, as needed to create the apps we need. This type of system typically works in a cloud or hybrid cloud environment, which often makes provisioning of servers and software as simple as entering some configurations and clicking a button.
 
-\subsection{Design}
-\paragraph{Adobe Photoshop}
-Adobe Photoshop is a software application for image editing and photo retouching for use on Windows or macOS computers. Photoshop offers users the ability to create, enhance, or otherwise edit images, artwork, and illustrations. Changing backgrounds, simulating a real-life painting, or creating an alternative view of the universe are all possible with Adobe Photoshop. It is the most widely used software tool for photo editing, image manipulation, and retouching for numerous image and video file formats. The tools within Photoshop make it possible to edit both individual images as well as large batches of photos.
-We used it to prototype and create our platform logo.
-\paragraph{Adobe XD}
-Adobe XD is a vector-based user experience design tool for web apps and mobile apps, developed and published by Adobe Inc. It is available for macOS and Windows, although there are versions for iOS and Android to help preview the result of work directly on mobile devices. XD.
+This type of setup is perfect for the MEAN stack, as each piece of the MEAN stack is easily placed into the cloud and thus can be easily provisioned, so they are widely available on SaaS services and can be used quickly when needed. If we are looking for a good development stack, the MEAN stack has much to offer for IT management as well as for developers!
+%%%%
 
+\subsection{Monolithic Applications}
 
+If all the functionalities of a project exist in a single codebase, then that application is known as a monolithic application. We all must have designed a monolithic application in our lives in which we were given a problem statement and were asked to design a system with various functionalities. We design our application in various layers like presentation, service, and persistence and then deploy that codebase as a single jar/war file. This is nothing but a monolithic application where “mono” represents the single codebase containing all the required functionalities.
+\begin{figure}[!ht]
+      \center
+      \includegraphics[scale=0.60]{assets/monolithic.jpg}
+      \caption{Monolithic Applications}
+      \label{fig:monoapp}
+\end{figure}
 
-
-
-
-
-
-
-
-
-
-\subsection{Development}
-\subsubsection{Version Control}
-When building software it’s always important to track your changes. This is especially critical when collaborating on projects where multiple people will be updating the same code. Software that can keep track of all
-these changes is called Version Control. The Version Control software we used is called Git. Because we built
-the platform for a client we decided to get a private repository at Github.com.
-
-\paragraph{Git}
-% Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source code management in software development, but it can be used to keep track of changes in any set of files. As a distributed revision control system it is aimed at speed, data integrity, and support for distributed, non-linear workflows.
-Git is a distributed revision control and source code management system that
-allows several people to work on the same codebase at the same time on different
-computers and networks. These can be pushed together, with all changes stored and
-recorded. It’s also possible to roll back to an earlier state if necessary.
-\paragraph{Github}
-At a high level, GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code. To understand exactly what GitHub is, we need to know two connected principles:
+Disadvantages of Monolithic applications:
 \begin{enumerate}
-      \item Version control
-      \item Git
+      \item
+            It becomes too large with time and hence, difficult to manage.
+      \item
+            We need to redeploy the whole application even for a small change.
+      \item
+            As the size of the application increases, its start-up and deployment time also increases.
+      \item
+            For any new developer joining the project, it is very difficult to understand the logic of a large Monolithic application even if his responsibility is related to a single functionality.
+      \item
+            Even if a single part of the application is facing a large load/traffic, we need to deploy the instances of the whole application in multiple servers. It is very inefficient and takes up more resources unnecessarily. Hence, horizontal scaling is not feasible in monolithic applications.
+      \item
+            It is very difficult to adopt any new technology which is well suited for a particular functionality as it affects the whole application, both in terms of time and cost.
+      \item
+            It is not very reliable as a single bug in any module can bring down the whole monolithic application.
+\end{enumerate}
+Advantages of monolithic applications:
+\begin{enumerate}
+      \item
+            Simple to develop relative to microservices where skilled developers are required in order to identify and develop the services.
+      \item
+            Easier to deploy as only a single jar/war file is deployed.
+      \item
+            Relatively easier and simple to develop in comparison to microservices architecture.
+      \item
+            The problems of network latency and security are relatively less in comparison to microservices architecture.
 \end{enumerate}
 
-\paragraph{Github Desktop}
-GitHub Desktop is a fast and easy way to contribute to projects from Windows and OS X, whether we are seasoned users or new users, GitHub Desktop is designed to simplify all processes and workflow in our GitHub. GitHub Desktop is an open-source Electron-based GitHub app. It is written in TypeScript and uses React.
+%%%
 
-
-\subsubsection{Dependency Managers}
-A large software project often makes use of many third-party packages and libraries. In turn, these packages
-often rely on several other packages and so on. To keep track of all these dependencies, software developers
-use package managers. Below we introduce the ones we have used.
-\paragraph{NPM}
-\paragraph{Angular CLI}
-
-\subsubsection{IDEs}
-
-\paragraph{Visual Studio Code}
-DescriptionVisual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control and GitHub, syntax highlighting, intelligent code completion, snippets, and code refactoring.
-
-
-\paragraph{MongoDB Compass Community}
-MongoDB Compass is the defacto GUI tool for MongoDB much like MySQL Workbench is MySQL’s associated tool. It allows us to visually explore our data, run ad hoc queries, interact with our data with full CRUD functionality, as well as view and optimize our queries’ performance.
-
-
-\paragraph{Postman}
-Postman is an interactive and automatic tool for verifying the APIs of our project. Postman is a Google Chrome app for interacting with HTTP APIs. It presents us with a friendly GUI for constructing requests and reading responses. It works on the backend, and makes sure that each API is working as intended.
-
-In Postman, we create a request, and Postman looks at the response to make sure it has the element we want in it. As it is an automation tool, it drastically improves the testing time and quality of the project. It helps in the early detection of bugs that might sprout at later stages and cause more damage to the system.
-
-Postman is the way to streamline the process of API testing. All APIs that we create and deploy first rigorously go through Postman so that any major or show stopper bugs are identified on time and fewer bugs leak through to later stages.
-
-
-
-
-\subsubsection{Report And Presentation}
-\paragraph{Boost Note}
-Boostnote is an Open source note-taking app for programmers.
-Boostnote is a niche tool because designed for programmers, but we are passionate for it.
-It focuses on writing Markdown notes and code snippets quickly, and get organized in a better way.
-
-\paragraph{Latex}
-\latex{} is a tool used to create professional-looking documents. It is based on the WYSIWYM (what we see is what we mean) idea, meaning we only have to focus on the contents of our document and the computer will take care of the formatting. Instead of spacing out text on a page to control formatting, as with Microsoft Word or LibreOffice Writer, users can enter plain text and let LATEX take care of the rest.
-\paragraph{MiKTex}
-MiKTeX provides the tools necessary to prepare documents using the TeX/LaTeX markup language, as well as a simple tex editor: TeXworks.
-
-\paragraph{Tex Live}
-TeX Live is intended to be a straightforward way to get up and running with the TeX document production system. It provides a comprehensive TeX system with binaries for most flavors of Unix, including GNU/Linux, macOS, and also Windows. It includes all the major TeX-related programs, macro packages, and fonts that are free software, including support for many languages around the world. Many operating systems provide it via their distributions.
-
-
-
-\paragraph{Markdown}
-Markdown is a lightweight markup language with plain-text-formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
-\paragraph{Marp}
-Marp is the ecosystem to write our presentation with plain Markdown.
-
-
-% section
-% section
-% section
 \section{Frameworks}
 \subsection*{MEAN stack}
 
@@ -156,6 +168,21 @@ While the name sounds like “mean”, it stands for the software pieces that ar
       \caption{Mean Stack}
       \label{fig:mean}
 \end{figure}
+
+When the user sends a request to through AngularJS then that request is firstly accessed by the NodeJS threading is done in the NodeJS and then it is sent to the ExpressJS to Create, Read, Update and Delete the API for the Request. ExpressJs host the website for the NodeJS. Both NodeJS and ExpressJS are server side languages. After \ac{CRUD} the \ac{API} data is retrieved from the MongoDB ad then send it to the User.
+\\
+Create (POST) - Make something\\
+Read (GET) - Get something\\
+Update (PUT) - Change something\\
+Delete (DELETE - Remove something\\
+
+\begin{figure}[!ht]
+      \center
+      \includegraphics[scale=0.60]{assets/meanarchdesc.png}
+      \caption{Mean Stack}
+      \label{fig:mean}
+\end{figure}
+
 \subsection{Front-End}
 \subsubsection{Single Page Application}
 Single-page application \ac{SPA} is an app that works inside a browser and does not require page reloading during use. You are using this type of applications every day. These are, for instance: Gmail, Google Maps, Facebook, or GitHub.
@@ -179,6 +206,7 @@ Single-page sites help keep the user in one, comfortable web space where content
 Angular is an app-design framework and development platform for creating efficient and sophisticated single-page apps in \ac{HTML}, \ac{CSS}, and Typescript which is a superset of JavaScript. Angular provides built-in features for animation, \ac{HTTP} service, and materials which in turn have features such as auto-complete, navigation, toolbar, menus, etc. The code is written in Typescript, which compiles to JavaScript and displays the same in the browser.
 
 \subsection{Back-End}
+
 \paragraph{Node Js}
 Node.js is open-source, and a cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
 Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent.
@@ -281,32 +309,7 @@ The sixth edition of the ECMAScript standard is ECMAScript6 or ES6 and later ren
 % section
 % section
 
-\section{Platform security}
-When you create a website or application, it means you are ready to show it thousands of people on the internet. Your customer/audience may be legit, but some of them will try to tamper your application. So you need to follow the following golden rules
 
-“Never trust your audience when it comes to your application’s security”
-Always validate the user input before getting it into the server.
-Always encode the user inputs before printing them on to the screen.
-\subsection{Physical level}
-\subsection{Logical level}
-\paragraph{JWT}
-\paragraph{HTTP}
 
-% section
-% section
-% section
 
-\section{Interfaces}
-% section
-% section
-% section
-
-\section{tests}
-
-% section
-% section
-% section
-% section
-
-\section{Deployment}
 
