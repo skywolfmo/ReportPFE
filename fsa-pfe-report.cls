@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % fsa-pfe-report.cls
 % % LaTeX class to specifie FSA PFE Report style
-% \documentstyle{pfe-enis}
+% \documentstyle{pfe-fsa}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Compilation parameters
 \usepackage{silence}
@@ -33,9 +33,23 @@
 \usepackage{float} 
 \usepackage{tabularx}
 \usepackage{minitoc}
+\usepackage{listings}
+\usepackage{subcaption}
+
 \def\defaultFont{ptm}
 \renewcommand*{\familydefault}{\defaultFont}
 \renewcommand\UrlFont{\ignore{Actually do nothing!}}
+
+
+
+\lstdefinelanguage[ECMAScript2015]{JavaScript}[]{JavaScript}{
+  morekeywords=[1]{await, async, case, catch, class, const, default, do,
+    enum, export, extends, finally, from, implements, import, instanceof,
+    let, static, super, switch, throw, try},
+  morestring=[b]` % Interpolation strings.
+}
+
+
 
 % Serif Fonts
 %   cmr Computer Modern Roman (default)
@@ -198,7 +212,7 @@
 \renewcommand\thesubparagraph{\roman{subparagraph}.}
 
 \setlength{\parskip}{1ex} % Spacing between paragraphs
-\setlist[enumerate]{itemsep=-0.35\baselineskip} % Spacing in enumerates
+\setlist[enumerate]{itemsep=-0.1\baselineskip} % Spacing in enumerates
 
 % Remove hyphens
 \hyphenpenalty=10000
@@ -211,6 +225,8 @@
 %\predisplaypenalty=10000
 %\postdisplaypenalty=10000
 %\displaywidowpenalty=10000
+
+% paragraph indent
 
 
 % Improve figure placement

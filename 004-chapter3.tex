@@ -26,8 +26,6 @@ The capture of technical needs is as follows:
 \subsection{Capturing Hardware Specifications}
 
 \subsection{Capturing Software Specifications}
-Once the hardware specifications have been determined, we move on to the non-functional specifications, in other words, technical or software specifications.
-
 These are technical features that the system will provide to the user regardless of the business or functional term.
 
 We will, therefore, list a list of technical functionalities that our system will be able to provide and offer to users, which is why we have introduced the concepts of operator and technical use cases:
@@ -106,10 +104,10 @@ MVC is more of an architectural pattern, but not for a complete application. MVC
 \subsection{Representational State Transfer Architecture}
 REpresentational State Transfer \ac{REST}, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
 %%%%
-\subsection{Software as a Service}
+\subsection{Platform as a Service}
 Software as a Service  \ac{SaaS} , which allows us to set up services, such as application servers and databases, as needed to create the apps we need. This type of system typically works in a cloud or hybrid cloud environment, which often makes provisioning of servers and software as simple as entering some configurations and clicking a button.
 
-This type of setup is perfect for the MEAN stack, as each piece of the MEAN stack is easily placed into the cloud and thus can be easily provisioned, so they are widely available on SaaS services and can be used quickly when needed.
+This type of setup is perfect for the MEAN stack, as each piece of the MEAN stack is easily placed into the cloud and thus can be easily provisioned, so they are widely available on PaaS services and can be used quickly when needed.
 %%%%
 
 \subsection{Monolithic Applications}
@@ -170,7 +168,7 @@ While the name sounds like “mean”, it stands for the software pieces that ar
       \label{fig:mean}
 \end{figure}
 
-When the user sends a request to through AngularJS then that request is firstly accessed by the NodeJS threading is done in the NodeJS and then it is sent to the ExpressJS to Create, Read, Update and Delete the API for the Request. ExpressJs host the website for the NodeJS. Both NodeJS and ExpressJS are server side languages. After \ac{CRUD} the \ac{API} data is retrieved from the MongoDB and then send it to the User.
+When the user sends a request to through AngularJS then that request is firstly accessed by the NodeJS threading is done in the NodeJS and then it is sent to the ExpressJS to Create, Read, Update and Delete the API for the Request. ExpressJs host the website for the NodeJS. Both NodeJS and ExpressJS are server-side languages. After \ac{CRUD} the \ac{API} data is retrieved from the MongoDB and then send it to the User.
 \\
 Create (POST) - Make something\\
 Read (GET) - Get something\\
@@ -251,7 +249,7 @@ MongoDB is a cross-platform, document-oriented database that provides, high perf
 
 
 \paragraph*{Mongoose}
-Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+Mongoose is an Object Data Modeling \ac{ODM} library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
 
 
 
@@ -271,36 +269,30 @@ Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It ma
 \paragraph*{PlantUML}
 PlantUML is an open-source tool allowing users to create \ac{UML} diagrams from a plain text language. The language of PlantUML is an example of a Domain-specific language. It uses Graphviz software to lay out its diagrams. 
 \subsection{General}
-\paragraph{JavaScript Object Notation}
+\paragraph*{JavaScript Object Notation}
 \ac{JSON} is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language Standard ECMA-262 3rd Edition - December 1999. \ac{JSON} is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make \ac{JSON} an ideal data-interchange language.
 
 \subsection{Front-End}
-\paragraph{Typescript}
+\paragraph*{Typescript}
 TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript. As TypeScript is a superset of JavaScript, existing JavaScript programs are also valid TypeScript programs.
 
-TypeScript may be used to develop JavaScript applications for both client-side and server-side execution (as with Node.js or Deno). There are multiple options available for transcompilation. Either the default TypeScript Checker can be used, or the Babel compiler can be invoked to convert TypeScript to JavaScript.
-
-TypeScript supports definition files that can contain type information of existing JavaScript libraries, much like C++ header files can describe the structure of existing object files. This enables other programs to use the values defined in the files as if they were statically typed TypeScript entities. There are third-party header files for popular libraries such as jQuery, MongoDB, and D3.js. TypeScript headers for the Node.js basic modules are also available, allowing the development of Node.js programs within TypeScript.
-
-The TypeScript compiler is itself written in TypeScript and compiled to JavaScript. It is licensed under the Apache License 2.0. TypeScript is included as a first-class programming language in Microsoft Visual Studio 2013 Update 2 and later, besides C\# and other Microsoft languages. An official extension allows Visual Studio 2012 to support TypeScript as well. Anders Hejlsberg, the lead architect of C\# and creator of Delphi and Turbo Pascal, has worked on the development of TypeScript.
-
-\paragraph{HTML}
+\paragraph*{HTML}
 Hypertext Markup Language \ac{HTML} is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
 
 Web browsers receive HTML documents from a web server or local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
 
 
 
-\paragraph{CSS}
+\paragraph*{CSS}
 Cascading Style Sheets \ac{CSS} is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
 
 \ac{CSS} is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.
 
 
 \subsection{Back-End}
-\paragraph{Javascript}
+\paragraph*{Javascript}
 JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
-\paragraph{ES6}
+\paragraph*{ES6}
 Script. The developers use ECMAScript mostly for client-side scripting of the World Wide Web \ac{WWW}.
 
 The sixth edition of the ECMAScript standard is ECMAScript6 or ES6 and later renamed as ECMAScript 2015. It is a major enhancement to the JavaScript language, which allows us to write programs for complex applications. It adds many features intended to make large-scale software development easier. The most common ES6 web-browsers are Chrome and Firefox. A transpiler converts the ES6 based code into ES5 which is supported many browsers. TypeScript is a transpiler. Grunt, Gulp, and Babel are some other transpilers to compile the modules. Therefore, TypeScript supports ES6.

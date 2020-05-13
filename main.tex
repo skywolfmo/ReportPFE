@@ -17,13 +17,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage{showframe}
 
+% \usepackage{minted}
 \usepackage[skins]{tcolorbox}
 \usepackage[francais,english]{babel}
 \usepackage[english]{varioref}
 \usepackage[export]{adjustbox}
 \usepackage{acro}
 \usepackage{setspace}
-% \usepackage{minted}
 \usepackage{color}
 \usepackage{tabularx}
 \usepackage{ctable}
@@ -37,8 +37,10 @@
 \usepackage{wrapfig}
 \usepackage{setspace}
 \usepackage[all]{nowidow}
-
 \usepackage[sorting=none, backend=bibtex]{biblatex}
+
+
+
 \addbibresource{001-report}
 
 %% TODO: Remove this function when done %%
@@ -68,6 +70,17 @@
 \include{002-top_matter}
 \cleardoublepage%
 
+% \thispagestyle{empty}
+% \vspace*{\fill}
+% \begin{center}
+% This page was left blank intentionally
+% \end{center}
+% \vspace*{\fill}
+% \thispagestyle{empty}
+
+\cleardoublepage%
+
+\cleardoublepage%
 \include{003-thanks}
 \cleardoublepage%
 
@@ -91,7 +104,7 @@
 \sloppy
 
 \pagenumbering{arabic}% 1 2 3 4 5
-\onehalfspacing{}% Double spacing between lisnes
+\onehalfspacing{}%  spacing between lisnes
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
