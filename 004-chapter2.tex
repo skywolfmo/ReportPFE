@@ -12,7 +12,8 @@
 % SECTION                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{General description of the platform}
-TODO
+Sahem is a unique crowdfunding app built primarily in MEAN Stack technologies. It has one type of user that can be two types at the same time: can be either a creator or a funder. A funder donates while a creator acquires the fund. This app has a trust-building mechanism called corroboration where funders can certify creators and allow creators to certify their claims through uploading documentary proofs in an image format. The final mode of crowdfunding takes place through the exchange of transactional information where Funders can pay and amount of monetary by a bank transfer or by card.
+We took the chance in providing easy accessibility to the main functionalities of the platform, as we tried to ask what is the most thing that a user wants to do, and we tried to optimize the number of clicks that a user would have to make in order to do the actions he wants, so we sought to make both of the creation of a fundraiser, and funding a project accessible by a maximum of 3 clicks and after the creator starts a fundraiser he can directly share a link that can lead to the funding page, bypassing the project description and content, to help in making the funders fund in a very short time, instead of filling unnecessary forms and passing by multiple pages.
 
 \section{Specification of requirements}
 We will proceed according to the UML method which consists of identifying and modeling the various business processes in order to easily migrate to an object architecture from a static and dynamic point of view. This analysis presents a total abstraction being independent of any technology or implementation.
@@ -107,13 +108,13 @@ The User’s optional functionalities are:
 
 
 \subsection{Identification of actors}
-In UML we don't use the term users but actors. A player in a system is an entity external to this system that interacts (data entry, reception of information, etc.) with it. The actors make it possible to define the interface that the system will offer to its environment. And also the actor groups together several users who have the same role. And to find actors it will be necessary to identify the different roles that will have to play its users.
+In UML we don't use the term users but actors. A player in a system is an entity external to this system that interacts (data entry, reception of information, etc.) with it. The actors make it possible to define the interface that the system will offer to its environment. And also the actor groups together several users who have the same role. And to define actores it will be necessary to identify their roles.
 To facilitate identification, we can imagine this: everything that is outside and interacts with the system is an actor, everything that is inside is a functionality to be realized.
-The different actors of the studied system are \ref{fig:sahemactors}:
+The different actors of the studied system are as Figure \ref{fig:sahemactors} shows:
 
 \begin{enumerate}
     \item  Creator.
-    \item  Funder will be merged with Creators.
+    \item  Funder will be merged with Creator.
     \item  Administrator.
     \item  Visitor.
 \end{enumerate}
@@ -129,6 +130,7 @@ A use case described in the form of actions and reactions, the behavior of a sys
 
 We will first determine the objectives that will allow us to deduce the use cases and all this:
 \begin{longtable}{|m{10em}|m{10em}|m{10em}|}\hline
+Management & Functionalities        &   Sub-functionalities                        \\\hline
     \multirow{4}{*}{Administration} & \multirow{2}{*}{Authentication}       & Authentication                          \\\cline{3-3}
                                                &                                       & Registration                            \\\cline{2-3}
                                                & \multirow{5}{*}{User Maintainance}    & Add User                                \\\cline{3-3}
@@ -163,15 +165,15 @@ We will first determine the objectives that will allow us to deduce the use case
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECTION                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Analyse fonctionnelle}
+\section{Functional Analysis}
 usecase
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECTION                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Analyse dynamique}
+\section{Dynamic Analysis}
 activity  squence
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECTION                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Analyse structurelle}
+\section{Structural Analysis}
 class

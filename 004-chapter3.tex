@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CHAPTER                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{mtc}{9}
+\setcounter{mtc}{10}
 
 \chapter{Technical And Environmental Study}%
 \label{chap:chapter_tree}
@@ -41,6 +41,8 @@ Also called "technical actors" of the system, these are the actors who benefit f
 \paragraph{Identification of technical use cases}
 
 \begin{longtable}{|m{10em}|m{10em}|m{10em}|}\hline
+      &                                          & Restore the database                                       \\\hline
+
       \multirow{4}{*}{Security management} & \multirow{5}{*}{Authentication}          & Register                                                    \\\cline{3-3}
                                            &                                          & Login                                                       \\\cline{3-3}
                                            &                                          & Reset Password                                              \\\cline{3-3}
@@ -81,12 +83,12 @@ Also called "technical actors" of the system, these are the actors who benefit f
 
 
 \section{Adopted Architecture}
-
+% TODO Link the architectures
 \subsection{Model View Controller Design Pattern}
 
 The Model View Controller \ac{MVC} design pattern specifies that an application consists of a data model, presentation information, and control information. The pattern requires that each of these be separated into different objects.
 
-MVC is more of an architectural pattern, but not for a complete application. MVC mostly relates to the User Interface \ac{UI} / interaction layer of an application. We’re still going to need a business logic layer, maybe some service layer and data access layer.
+MVC is more of an architectural pattern, but not for a complete application. MVC mostly relates to the \ac{UI} / interaction layer of an application. We’re still going to need a business logic layer, maybe some service layer and data access layer.
 \begin{enumerate}
       \item Model contains only the pure application data, it contains no logic describing how to present the data to a user.
       \item View presents the model’s data to the user. The view knows how to access the model’s data, but it does not know what this data means or what the user can do to manipulate it.
@@ -95,7 +97,7 @@ MVC is more of an architectural pattern, but not for a complete application. MVC
 
 \begin{figure}[!ht]
       \center
-      \includegraphics[scale=0.30]{assets/mvc.jpg}
+      \includegraphics[scale=0.25]{assets/mvc.jpg}
       \caption{Model View Controller}
       \label{fig:mvc}
 \end{figure}
@@ -103,8 +105,8 @@ MVC is more of an architectural pattern, but not for a complete application. MVC
 \subsection{Representational State Transfer Architecture}
 REpresentational State Transfer \ac{REST}, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
 %%%%
-\subsection{Platform as a Service}
-Software as a Service  \ac{SaaS} , which allows us to set up services, such as application servers and databases, as needed to create the apps we need. This type of system typically works in a cloud or hybrid cloud environment, which often makes provisioning of servers and software as simple as entering some configurations and clicking a button.
+\subsection{Software as a Service}
+\ac{SaaS} , which allows us to set up services, such as application servers and databases, as needed to create the apps we need. This type of system typically works in a cloud or hybrid cloud environment, which often makes provisioning of servers and software as simple as entering some configurations and clicking a button.
 
 This type of setup is perfect for the MEAN stack, as each piece of the MEAN stack is easily placed into the cloud and thus can be easily provisioned, so they are widely available on PaaS services and can be used quickly when needed.
 %%%%
@@ -114,7 +116,7 @@ This type of setup is perfect for the MEAN stack, as each piece of the MEAN stac
 If all the functionalities of a project exist in a single codebase, then that application is known as a monolithic application. We all must have designed a monolithic application in our lives in which we were given a problem statement and were asked to design a system with various functionalities. We design our application in various layers like presentation, service, and persistence and then deploy that codebase as a single jar/war file. This is nothing but a monolithic application where “mono” represents the single codebase containing all the required functionalities.
 \begin{figure}[!ht]
       \center
-      \includegraphics[scale=0.60]{assets/monolithic.jpg}
+      \includegraphics[scale=0.50]{assets/monolithic.jpg}
       \caption{Monolithic Applications}
       \label{fig:monoapp}
 \end{figure}
@@ -143,56 +145,75 @@ Advantages of monolithic applications:
       \item
             Easier to deploy as only a single jar/war file is deployed.
       \item
-            Relatively easier and simple to develop in comparison to microservices architecture.
+      Relatively easier and simple to develop in comparison to microservices architecture.
       \item
-            The problems of network latency and security are relatively less in comparison to microservices architecture.
+      The problems of network latency and security are relatively less in comparison to microservices architecture.
 \end{enumerate}
 
 %%%
 
 \section{Frameworks}
 \subsection*{MEAN stack}
-
-\begin{figure}[!ht]
-      \center
-      \includegraphics[scale=0.30]{assets/meanstack.png}
-\end{figure}
-
 While the name sounds like “mean”, it stands for the software pieces that are used to create a particular development stack: MongoDB, ExpressJS, Angular, and NodeJS. One of the biggest advantages of using this particular development stack is the ability to allow developers to use one consistent data model across the stack, using \ac{JSON} and BSON (for MongoDB). This allows for quick transitions between the various pieces of the stack, especially when a single programmer has to handle more than one portion of the stack.
 
 \begin{figure}[!ht]
       \center
-      \includegraphics[scale=0.60]{assets/mean.png}
-      \caption{Mean Stack}
+      \includegraphics[scale=0.50]{assets/meanphases.png}
+      \caption{The Flow In Mean Stack}
       \label{fig:mean}
 \end{figure}
-
-When the user sends a request to through AngularJS then that request is firstly accessed by the NodeJS threading is done in the NodeJS and then it is sent to the ExpressJS to Create, Read, Update and Delete the API for the Request. ExpressJs host the website for the NodeJS. Both NodeJS and ExpressJS are server-side languages. After \ac{CRUD} the \ac{API} data is retrieved from the MongoDB and then send it to the User.
-\\
-Create (POST) Make something\\
-Read (GET) Get something\\
-Update (PUT) Change something\\
-Delete (DELETE) Remove something\\
+\begin{enumerate}
+      \item 
+      When client makes any request, it is firstly processed by the Angular.
+      \item 
+      After that the Request enters in phase 2 which is NodeJS. NodeJS is a server side language in JavaScript.
+      \item 
+      After that Request enter in the phase 3 which is ExpressJs it make request to the database.
+      \item 
+      After that MongoDB retrieve the data and return the response to the ExpressJs.
+      \item 
+      Then ExpressJs return response to the NodeJS and then NodeJS return it to the AngularJS to display the result.
+\end{enumerate}
 
 \begin{figure}[!ht]
       \center
-      \includegraphics[scale=0.60]{assets/meanarchdesc.png}
-      \caption{Mean Stack}
+      \includegraphics[scale=0.55]{assets/meanarchdesc.png}
+      \caption{Communication In Mean Stack}
+      \label{fig:mean}
+\end{figure}
+
+\begin{itemize}
+      \item 
+      Create (POST) Make something
+      \item 
+      Read (GET) Get something
+      \item 
+      Update (PUT) Change something
+      \item 
+      Delete (DELETE) Remove something
+\end{itemize}
+
+
+
+\begin{figure}[!ht]
+      \center
+      \includegraphics[scale=0.40]{assets/mean.png}
+      \caption{Mean Stack Response Data Flow}
       \label{fig:mean}
 \end{figure}
 
 \subsection{Front-End}
 \subsubsection{Single Page Application}
-Single-page application \ac{SPA} is an app that works inside a browser and does not require page reloading during use. You are using this type of applications every day. These are, for instance: Gmail, Google Maps, Facebook, or GitHub.
+Single-page application \ac{SPA} is an app that works inside a browser and does not require page reloading during use.
 SPAs are all about serving an outstanding UX by trying to imitate a “natural” environment in the browser — no page reloads, no extra wait time. It is just one web page that you visit which then loads all other content using JavaScript — which they heavily depend on.
-SPA requests the markup and data independently and renders pages straight in the browser. We can do this thanks to the advanced JavaScript frameworks like AngularJS, Ember.js, Meteor.js, Knockout.js .
+SPA requests the markup and data independently and renders pages straight in the browser. We can do this thanks to the advanced JavaScript frameworks of Angular.
 Single-page sites help keep the user in one, comfortable web space where content is presented to the user in a simple, easy, and workable fashion.
 \paragraph*{Pros}
 \begin{enumerate}
       \item 
       SPA is fast, as most resources (HTML+CSS+Scripts) are only loaded once throughout the lifespan of the application. Only data is transmitted back and forth.
       \item 
-      The development is simplified and streamlined. There is no need to write code to render pages on the server. It is much easier to get started because you can usually kick off development from a file file://URI, without using any server at all.
+      The development is simplified and streamlined. There is no need to write code to render pages on the server.
       \item 
       SPAs are easy to debug with Chrome, as you can monitor network operations, investigate page elements and data associated with it.
       \item 
@@ -205,7 +226,7 @@ Angular is an app-design framework and development platform for creating efficie
 
 \subsection{Back-End}
 
-\paragraph*{Node Js}
+\subsubsection{Node Js}
 Node.js is open-source, and a cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
 Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent.
 
@@ -225,14 +246,14 @@ The following are some of the important features that make Node.js the first cho
 
 
 
-\paragraph*{Express Js}
+\subsubsection{Express Js}
 ExpressJS is a web application framework that provides us with a simple API to build websites, web apps, and back ends. With ExpressJS, we need not worry about low-level protocols, processes, etc.
 Express provides a minimal interface to build our applications. It provides us the tools that are required to build our app. It is flexible as there are numerous modules available on npm, which can be directly plugged into Express.
 Express was developed by TJ Holowaychuk and is maintained by the Node.js Foundation and numerous open source contributors.
 
 
 
-\paragraph*{MongoDB}
+\subsubsection{MongoDB}
 MongoDB is a cross-platform, document-oriented database that provides, high performance, high availability, and easy scalability. MongoDB works on the concept of collection and document.
 \begin{enumerate}
       \item
@@ -247,7 +268,7 @@ MongoDB is a cross-platform, document-oriented database that provides, high perf
 \end{enumerate}
 
 
-\paragraph*{Mongoose}
+\subsubsection{Mongoose}
 Mongoose is an Object Data Modeling \ac{ODM} library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
 
 
@@ -272,26 +293,26 @@ PlantUML is an open-source tool allowing users to create \ac{UML} diagrams from 
 \ac{JSON} is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language Standard ECMA-262 3rd Edition - December 1999. \ac{JSON} is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C\#, Java, JavaScript, Perl, Python, and many others. These properties make \ac{JSON} an ideal data-interchange language.
 
 \subsection{Front-End}
-\paragraph*{Typescript}
+\subsubsection{Typescript}
 TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript. As TypeScript is a superset of JavaScript, existing JavaScript programs are also valid TypeScript programs.
 
-\paragraph*{HTML}
+\subsubsection{HTML}
 Hypertext Markup Language \ac{HTML} is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
 
 Web browsers receive HTML documents from a web server or local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
 
 
 
-\paragraph*{CSS}
+\subsubsection{CSS}
 Cascading Style Sheets \ac{CSS} is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
 
 \ac{CSS} is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.
 
 
 \subsection{Back-End}
-\paragraph*{Javascript}
+\subsubsection{Javascript}
 JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
-\paragraph*{ES6}
+\subsubsection{ES6}
 Script. The developers use ECMAScript mostly for client-side scripting of the World Wide Web \ac{WWW}.
 
 The sixth edition of the ECMAScript standard is ECMAScript6 or ES6 and later renamed as ECMAScript 2015. It is a major enhancement to the JavaScript language, which allows us to write programs for complex applications. It adds many features intended to make large-scale software development easier. The most common ES6 web-browsers are Chrome and Firefox. A transpiler converts the ES6 based code into ES5 which is supported many browsers. TypeScript is a transpiler. Grunt, Gulp, and Babel are some other transpilers to compile the modules. Therefore, TypeScript supports ES6.
