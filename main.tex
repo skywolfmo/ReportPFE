@@ -38,6 +38,7 @@
 \usepackage{setspace}
 \usepackage[all]{nowidow}
 \usepackage[sorting=none, backend=bibtex]{biblatex}
+\usepackage{multicol}
 
 
 
@@ -104,7 +105,7 @@
 \sloppy
 
 \pagenumbering{arabic}% 1 2 3 4 5
-\onehalfspacing{}%  spacing between lisnes
+\singlespacing{}%  spacing between lisnes 
 % \onehalfspacing{}%  spacing between lisnes
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
@@ -137,15 +138,15 @@
 \include{005-conclusion}
 \cleardoublepage%
 
-\include{006-appendix}
-\cleardoublepage%
+% \include{006-appendix}
+% \cleardoublepage%
 
 \include{007-references}
-\cleardoublepage%
+% \cleardoublepage%
 
 % \includepdf[pages={-}]{008-abstract.pdf}
 %\include{008-abstract}
-\cleardoublepage%
+% \cleardoublepage%
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
 

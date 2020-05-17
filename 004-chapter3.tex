@@ -41,7 +41,7 @@ Also called "technical actors" of the system, these are the actors who benefit f
 \paragraph{Identification of technical use cases}
 
 \begin{longtable}{|m{10em}|m{10em}|m{10em}|}\hline
-      &                                          & Restore the database                                       \\\hline
+  Aspects    &                  Use Cases                       & Sub-Use Cases                                       \\\hline
 
       \multirow{4}{*}{Security management} & \multirow{5}{*}{Authentication}          & Register                                                    \\\cline{3-3}
                                            &                                          & Login                                                       \\\cline{3-3}
@@ -82,18 +82,33 @@ Also called "technical actors" of the system, these are the actors who benefit f
 
 
 
-\section{Adopted Architecture}
+\section{Adopted Software Architecture}
 % TODO Link the architectures
-\subsection{Model View Controller Design Pattern}
+The software architecture of a system describes its major components, their relationships, and how they interact with each other.
+
+It essentially serves as a blueprint. It provides an abstraction to manage the system complexity and establish communication and coordination among components.
+
+It helps us to determine how we should handle the codebase of our application, the technology to go with, and what cloud architecture is best for our application.
+
+\begin{figure}[!ht]
+      \center
+      \includegraphics[scale=0.70]{assets/software_arch.jpg}
+      \caption{Software Architecture Factors}
+      \label{fig:mvc}
+\end{figure}
+
+\subsection{Software Architecture Pattern}
 
 The Model View Controller \ac{MVC} design pattern specifies that an application consists of a data model, presentation information, and control information. The pattern requires that each of these be separated into different objects.
 
-MVC is more of an architectural pattern, but not for a complete application. MVC mostly relates to the \ac{UI} / interaction layer of an application. We’re still going to need a business logic layer, maybe some service layer and data access layer.
-\begin{enumerate}
-      \item Model contains only the pure application data, it contains no logic describing how to present the data to a user.
-      \item View presents the model’s data to the user. The view knows how to access the model’s data, but it does not know what this data means or what the user can do to manipulate it.
-      \item Controller exists between the view and the model. It listens to events triggered by the view (or another external source) and executes the appropriate reaction to these events. In most cases, the reaction is to call a method on the model. Since the view and the model are connected through a notification mechanism, the result of this action is then automatically reflected in the view.
-\end{enumerate}
+% MVC is more of an architectural pattern, but not for a complete application. MVC mostly relates to the \ac{UI} / interaction layer of an application. We’re still going to need a business logic layer, maybe some service layer and data access layer.
+The MVC architecture is a software architectural pattern in which the application logic is divided into three components on the basis of functionality. These components are called: Models - represent how data is stored in the database Views - the components that are visible to the user, such as an output or a GUI Controllers, the components that act as an interface between models and views
+
+% \begin{enumerate}
+%       \item Model contains only the pure application data, it contains no logic describing how to present the data to a user.
+%       \item View presents the model’s data to the user. The view knows how to access the model’s data, but it does not know what this data means or what the user can do to manipulate it.
+%       \item Controller exists between the view and the model. It listens to events triggered by the view (or another external source) and executes the appropriate reaction to these events. In most cases, the reaction is to call a method on the model. Since the view and the model are connected through a notification mechanism, the result of this action is then automatically reflected in the view.
+% \end{enumerate}
 
 \begin{figure}[!ht]
       \center
@@ -102,16 +117,11 @@ MVC is more of an architectural pattern, but not for a complete application. MVC
       \label{fig:mvc}
 \end{figure}
 % %%%%%%%
-\subsection{Representational State Transfer Architecture}
-REpresentational State Transfer \ac{REST}, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
 %%%%
-\subsection{Software as a Service}
-\ac{SaaS} , which allows us to set up services, such as application servers and databases, as needed to create the apps we need. This type of system typically works in a cloud or hybrid cloud environment, which often makes provisioning of servers and software as simple as entering some configurations and clicking a button.
-
-This type of setup is perfect for the MEAN stack, as each piece of the MEAN stack is easily placed into the cloud and thus can be easily provisioned, so they are widely available on PaaS services and can be used quickly when needed.
 %%%%
 
-\subsection{Monolithic Applications}
+\subsection{Codebase Architecture}
+Monolithic applications fit best for use cases where the requirements are pretty simple, the app is expected to handle a limited amount of traffic. 
 
 If all the functionalities of a project exist in a single codebase, then that application is known as a monolithic application. We all must have designed a monolithic application in our lives in which we were given a problem statement and were asked to design a system with various functionalities. We design our application in various layers like presentation, service, and persistence and then deploy that codebase as a single jar/war file. This is nothing but a monolithic application where “mono” represents the single codebase containing all the required functionalities.
 \begin{figure}[!ht]
@@ -121,37 +131,44 @@ If all the functionalities of a project exist in a single codebase, then that ap
       \label{fig:monoapp}
 \end{figure}
 
-Disadvantages of Monolithic applications:
-\begin{enumerate}
-      \item
-            It becomes too large with time and hence, difficult to manage.
-      \item
-            We need to redeploy the whole application even for a small change.
-      \item
-            As the size of the application increases, its start-up and deployment time also increases.
-      \item
-            For any new developer joining the project, it is very difficult to understand the logic of a large Monolithic application even if his responsibility is related to a single functionality.
-      \item
-            Even if a single part of the application is facing a large load/traffic, we need to deploy the instances of the whole application in multiple servers. It is very inefficient and takes up more resources unnecessarily. Hence, horizontal scaling is not feasible in monolithic applications.
-      \item
-            It is very difficult to adopt any new technology which is well suited for a particular functionality as it affects the whole application, both in terms of time and cost.
-      \item
-            It is not very reliable as a single bug in any module can bring down the whole monolithic application.
-\end{enumerate}
-Advantages of monolithic applications:
-\begin{enumerate}
-      \item
-            Simple to develop relative to microservices where skilled developers are required in order to identify and develop the services.
-      \item
-            Easier to deploy as only a single jar/war file is deployed.
-      \item
-      Relatively easier and simple to develop in comparison to microservices architecture.
-      \item
-      The problems of network latency and security are relatively less in comparison to microservices architecture.
-\end{enumerate}
+% Disadvantages of Monolithic applications:
+% \begin{enumerate}
+%       \item
+%       It becomes too large with time and hence, difficult to manage.
+%       \item
+%       We need to redeploy the whole application even for a small change.
+%       \item
+%       As the size of the application increases, its start-up and deployment time also increases.
+%       \item
+%       For any new developer joining the project, it is very difficult to understand the logic of a large Monolithic application even if his responsibility is related to a single functionality.
+%       \item
+%       Even if a single part of the application is facing a large load/traffic, we need to deploy the instances of the whole application in multiple servers. It is very inefficient and takes up more resources unnecessarily. Hence, horizontal scaling is not feasible in monolithic applications.
+%       \item
+%       It is very difficult to adopt any new technology which is well suited for a particular functionality as it affects the whole application, both in terms of time and cost.
+%       \item
+%       It is not very reliable as a single bug in any module can bring down the whole monolithic application.
+% \end{enumerate}
+% Advantages of monolithic applications:
+% \begin{enumerate}
+%       \item
+%       Simple to develop relative to microservices where skilled developers are required in order to identify and develop the services.
+%       \item
+%       Easier to deploy as only a single jar/war file is deployed.
+%       \item
+%             Relatively easier and simple to develop in comparison to microservices architecture.
+%       \item
+%             The problems of network latency and security are relatively less in comparison to microservices architecture.
+%       \end{enumerate}
 
-%%%
+\subsection{Controller Architecture}
+REpresentational State Transfer \ac{REST}, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server.
 
+\subsection{Cloud Architecture}
+      \ac{SaaS} , which allows us to set up services, such as application servers and databases, as needed to create the apps we need. This type of system typically works in a cloud or hybrid cloud environment, which often makes provisioning of servers and software as simple as entering some configurations and clicking a button.
+      
+      This type of setup is perfect for the MEAN stack in the deployment stage, as each piece of the MEAN stack is easily placed into the cloud and thus can be easily provisioned, so they are widely available on PaaS services and can be used quickly when needed.
+      %%%
+      
 \section{Frameworks}
 \subsection*{MEAN stack}
 While the name sounds like “mean”, it stands for the software pieces that are used to create a particular development stack: MongoDB, ExpressJS, Angular, and NodeJS. One of the biggest advantages of using this particular development stack is the ability to allow developers to use one consistent data model across the stack, using \ac{JSON} and BSON (for MongoDB). This allows for quick transitions between the various pieces of the stack, especially when a single programmer has to handle more than one portion of the stack.
@@ -164,13 +181,13 @@ While the name sounds like “mean”, it stands for the software pieces that ar
 \end{figure}
 \begin{enumerate}
       \item 
-      When client makes any request, it is firstly processed by the Angular.
+      When a client makes any request, it is firstly processed by the Angular.
       \item 
-      After that the Request enters in phase 2 which is NodeJS. NodeJS is a server side language in JavaScript.
+      After that, the Request enters phase 2 which is NodeJS.
       \item 
-      After that Request enter in the phase 3 which is ExpressJs it make request to the database.
+      After that Request enters phase 3, and ExpressJs it send a request to the database.
       \item 
-      After that MongoDB retrieve the data and return the response to the ExpressJs.
+      After that, MongoDB retrieves the data and return the response to the ExpressJs.
       \item 
       Then ExpressJs return response to the NodeJS and then NodeJS return it to the AngularJS to display the result.
 \end{enumerate}
@@ -195,34 +212,28 @@ While the name sounds like “mean”, it stands for the software pieces that ar
 
 
 
-\begin{figure}[!ht]
-      \center
-      \includegraphics[scale=0.40]{assets/mean.png}
-      \caption{Mean Stack Response Data Flow}
-      \label{fig:mean}
-\end{figure}
 
 \subsection{Front-End}
 \subsubsection{Single Page Application}
 Single-page application \ac{SPA} is an app that works inside a browser and does not require page reloading during use.
-SPAs are all about serving an outstanding UX by trying to imitate a “natural” environment in the browser — no page reloads, no extra wait time. It is just one web page that you visit which then loads all other content using JavaScript — which they heavily depend on.
-SPA requests the markup and data independently and renders pages straight in the browser. We can do this thanks to the advanced JavaScript frameworks of Angular.
+SPAs are all about serving an outstanding UX by trying to imitate a “natural” environment in the browser, no page reloads, no extra wait time. It is just one web page that you visit which then loads all other content using JavaScript, which they heavily depend on.
+SPA requests the markup and data independently and renders pages straight in the browser.
 Single-page sites help keep the user in one, comfortable web space where content is presented to the user in a simple, easy, and workable fashion.
-\paragraph*{Pros}
-\begin{enumerate}
-      \item 
-      SPA is fast, as most resources (HTML+CSS+Scripts) are only loaded once throughout the lifespan of the application. Only data is transmitted back and forth.
-      \item 
-      The development is simplified and streamlined. There is no need to write code to render pages on the server.
-      \item 
-      SPAs are easy to debug with Chrome, as you can monitor network operations, investigate page elements and data associated with it.
-      \item 
-      It’s easier to make a mobile application because the developer can reuse the same backend code for web applications and native mobile applications.
-      \item 
-      SPA can cache any local storage effectively. An application sends only one request, store all data, then it can use this data and works even offline.
-\end{enumerate}
+% \paragraph*{Pros}
+% \begin{enumerate}
+%       \item 
+%       SPA is fast, as most resources (HTML+CSS+Scripts) are only loaded once throughout the lifespan of the application. Only data is transmitted back and forth.
+%       \item 
+%       The development is simplified and streamlined. There is no need to write code to render pages on the server.
+%       \item 
+%       SPAs are easy to debug with Chrome, as you can monitor network operations, investigate page elements and data associated with it.
+%       \item 
+%       It’s easier to make a mobile application because the developer can reuse the same backend code for web applications and native mobile applications.
+%       \item 
+%       SPA can cache any local storage effectively. An application sends only one request, store all data, then it can use this data and works even offline.
+% \end{enumerate}
 \subsubsection{Angular 9}
-Angular is an app-design framework and development platform for creating efficient and sophisticated single-page apps in \ac{HTML}, \ac{CSS}, and Typescript which is a superset of JavaScript. Angular provides built-in features for animation, \ac{HTTP} service, and materials which in turn have features such as auto-complete, navigation, toolbar, menus, etc. The code is written in Typescript, which compiles to JavaScript and displays the same in the browser.
+Angular is an app-design framework and development platform for creating efficient and sophisticated single-page apps in \ac{HTML}, \ac{CSS}, and Typescript which is a superset of JavaScript. Angular provides built-in features for animation, \ac{HTTP} service, and materials which in turn have features such as auto-complete, navigation, toolbar, menus, etc.
 
 \subsection{Back-End}
 
@@ -233,15 +244,19 @@ Node.js also provides a rich library of various JavaScript modules which simplif
 The following are some of the important features that make Node.js the first choice of software architects.
 \begin{enumerate}
       \item
-            Asynchronous and Event-Driven: All APIs of Node.js library are asynchronous, that is, non-blocking. It essentially means a Node.js based server never waits for an API to return data. The server moves to the next API after calling it and a notification mechanism of Events of Node.js helps the server to get a response from the previous API call.
+            Asynchronous and Event-Driven
+            %  All APIs of Node.js library are asynchronous, that is, non-blocking. It essentially means a Node.js based server never waits for an API to return data. The server moves to the next API after calling it and a notification mechanism of Events of Node.js helps the server to get a response from the previous API call.
       \item
-            Very Fast: Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
+            Very Fast
+            %  Being built on Google Chrome's V8 JavaScript Engine, Node.js library is very fast in code execution.
       \item
-            Single-Threaded but Highly Scalable: Node.js uses a single-threaded model with event looping. The event mechanism helps the server to respond in a non-blocking way and makes the server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single-threaded program and the same program can provide service to a much larger number of requests than traditional servers like Apache HTTP Server.
+            Single-Threaded but Highly Scalable
+            %  Node.js uses a single-threaded model with event looping. The event mechanism helps the server to respond in a non-blocking way and makes the server highly scalable as opposed to traditional servers which create limited threads to handle requests. Node.js uses a single-threaded program and the same program can provide service to a much larger number of requests than traditional servers like Apache HTTP Server.
       \item
-            No Buffering: Node.js applications never buffer any data. These applications simply output the data in chunks.
+            No Buffering
+            %  Node.js applications never buffer any data. These applications simply output the data in chunks.
       \item
-            License: Node.js is released under the MIT license
+            Node.js is released under the MIT license
 \end{enumerate}
 
 
@@ -299,23 +314,19 @@ TypeScript is an open-source programming language developed and maintained by Mi
 \subsubsection{HTML}
 Hypertext Markup Language \ac{HTML} is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
 
-Web browsers receive HTML documents from a web server or local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
+% Web browsers receive HTML documents from a web server or local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
 
 
 
 \subsubsection{CSS}
 Cascading Style Sheets \ac{CSS} is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
 
-\ac{CSS} is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.
+% \ac{CSS} is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.
 
 
 \subsection{Back-End}
 \subsubsection{Javascript}
 JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.
-\subsubsection{ES6}
-Script. The developers use ECMAScript mostly for client-side scripting of the World Wide Web \ac{WWW}.
-
-The sixth edition of the ECMAScript standard is ECMAScript6 or ES6 and later renamed as ECMAScript 2015. It is a major enhancement to the JavaScript language, which allows us to write programs for complex applications. It adds many features intended to make large-scale software development easier. The most common ES6 web-browsers are Chrome and Firefox. A transpiler converts the ES6 based code into ES5 which is supported many browsers. TypeScript is a transpiler. Grunt, Gulp, and Babel are some other transpilers to compile the modules. Therefore, TypeScript supports ES6.
 
 
 % section

@@ -13,51 +13,42 @@
 \section{Hardware Environments}
 
 \subsection{Development hardware }
-The good news is that you don’t need anything particularly special to run a development stack. A single laptop or even a virtual machine \ac{VM} is enough to develop a MEAN application. All components of the stack can be installed on Windows, macOS, and most Linux distributions.\\
-
-We’ve successfully developed applications on Windows.\\
+The good news is that you don’t need anything particularly special to run the development of mean stack. A single laptop or even a virtual machine \ac{VM} is enough to develop a MEAN application. All components of the stack can be installed on Windows, macOS, and most Linux distributions.
 
 \subsection{Production hardware }
-The approach to production hardware architecture isn’t all that different from development hardware. The main difference is that production hardware is normally higher-spec and open to the internet to receive public requests.\\
+The approach to production hardware architecture isn’t all that different from development hardware. The main difference is that production hardware is normally higher-spec and open to the internet to receive public requests.
 
 \begin{figure}[!ht]
       \centering
-      \includegraphics[scale=0.30]{assets/architecturedrawio.jpg}
+      \includegraphics[scale=0.25]{assets/architecturedrawio.jpg}
       \caption{Sahem Platform's Hardware Architecture}
       \label{fig:sahemarchitecturedrawio}
 \end{figure}
-This model is the commonly go with model, when it comes to using \ac{PaaS} provider for hosting.
+This model is commonly used when it comes to using \ac{PaaS} provider for hosting.
 \section{Development Environments}
 \subsection{Design And Planing}
+In the modeling phase, we found many solutions and software that helped to create diagrams, but they all are graphic based solutions and felt a bit short. But we decided to work with the following tools.
 
 \paragraph*{PlantUml}
-In the modeling phase, we found many other solutions and software that helped to create diagrams, but they all are graphic based solutions, you have to drag and drop a lot of objects, dragging arrows from one class to the other, which we found it to be frustrating and tiring with time, so we have decided to go with PlantUML. We are programmers and we should use that fact.\\
 PlantUML is an open-source tool allowing users to create UML diagrams from plain text language. The language of PlantUML is an example of a Domain-specific language. It uses Graphviz software to layout its diagrams. It has been used to allow blind students to work with UML. PlantUML also helps blind software engineers to design and read UML diagrams.
 
-
 \paragraph*{Gantt chart}
-A Gantt chart is a horizontal bar chart that visually represents a project plan over time. Modern Gantt charts typically show us the status of—as well as who’s responsible for—each task in the project.\\
-
-In other words, a Gantt chart is a super-simple way to keep us out of a project pinch!
+A Gantt chart is a horizontal bar chart that visually represents a project plan over time. Modern Gantt charts typically show us the status of—as well as who’s responsible for—each task in the project.
 
 
 \subsection{User Interface And Product Design}
 \paragraph*{Adobe Photoshop}
-Adobe Photoshop is a software application for image editing and photo retouching for use on Windows or macOS computers. Photoshop offers users the ability to create, enhance, or otherwise edit images, artwork, and illustrations. Changing backgrounds, simulating a real-life painting, or creating an alternative view of the universe are all possible with Adobe Photoshop. It is the most widely used software tool for photo editing, image manipulation, and retouching for numerous image and video file formats. The tools within Photoshop make it possible to edit both individual images as well as large batches of photos.
-We used it to prototype and create our platform logo.
+Adobe Photoshop is a software application for image editing and photo retouching and logo creation. Photoshop offers users the ability to create, enhance, or otherwise edit images, artwork, and illustrations. It is the most widely used software tool for photo editing, image manipulation, and retouching for numerous image and video file formats.
+
 \paragraph*{Adobe XD}
-Adobe XD is a vector-based user experience design tool for web apps and mobile apps, developed and published by Adobe Inc. It is available for macOS and Windows, although there are versions for iOS and Android to help preview the result of work directly on mobile devices. XD.
-
-
-
+Adobe XD is a vector-based user experience design tool for web apps and mobile apps, developed and published by Adobe Inc. It is available for macOS and Windows, although there are versions for iOS and Android to help preview the result of work directly on mobile devices.
 
 
 
 \subsection{Development}
 \subsubsection{Version Control}
 When building software it’s always important to track your changes. This is especially critical when collaborating on projects where multiple people will be updating the same code. Software that can keep track of all
-these changes is called Version Control. The Version Control software we used is called Git. Because we built
-the platform for a client we decided to get a private repository at Github.com.
+these changes are called Version Control.
 
 \paragraph*{Git}
 % Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source code management in software development, but it can be used to keep track of changes in any set of files. As a distributed revision control system it is aimed at speed, data integrity, and support for distributed, non-linear workflows.
@@ -66,20 +57,15 @@ allows several people to work on the same codebase at the same time on different
 computers and networks. These can be pushed together, with all changes stored and
 recorded. It’s also possible to roll back to an earlier state if necessary.
 \paragraph*{Github}
-At a high level, GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code. To understand exactly what GitHub is, we need to know two connected principles:
-\begin{enumerate}
-      \item Version control
-      \item Git
-\end{enumerate}
+At a high level, GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code.
 
 \paragraph*{Github Desktop}
-GitHub Desktop is a fast and easy way to contribute to projects from Windows and OS X, whether we are seasoned users or new users, GitHub Desktop is designed to simplify all processes and workflow in our GitHub. GitHub Desktop is an open-source Electron-based GitHub app. It is written in TypeScript and uses React.
-
+GitHub Desktop is a fast and easy way to contribute to projects, and is designed to simplify all processes and workflow in our GitHub.
 
 \subsubsection{Dependency Managers}
 A large software project often makes use of many third-party packages and libraries. In turn, these packages
 often rely on several other packages and so on. To keep track of all these dependencies, software developers
-use package managers. Below we introduce the ones we have used.
+use-package managers. Below we introduce the ones we have used.
 \paragraph*{Node Package Manager}
 Node Package Manager \ac{NPM}, is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with the said repository that aids in package installation, version management, and dependency management.
 \paragraph*{Angular CLI}
@@ -97,31 +83,26 @@ MongoDB Compass is the defacto GUI tool for MongoDB much like MySQL Workbench is
 \paragraph*{Postman}
 Postman is an interactive and automatic tool for verifying the APIs of our project. Postman is a Google Chrome app for interacting with HTTP APIs. It presents us with a friendly GUI for constructing requests and reading responses. It works on the backend, and makes sure that each API is working as intended.
 
-In Postman, we create a request, and Postman looks at the response to make sure it has the element we want in it. As it is an automation tool, it drastically improves the testing time and quality of the project. It helps in the early detection of bugs that might sprout at later stages and cause more damage to the system.
-
-Postman is the way to streamline the process of API testing. All APIs that we create and deploy first rigorously go through Postman so that any major or show stopper bugs are identified on time and fewer bugs leak through to later stages.
-
 
 
 
 \subsubsection{Report And Presentation}
 \paragraph*{Boost Note}
 Boostnote is an Open source note-taking app for programmers.
-Boostnote is a niche tool because designed for programmers, but we are passionate for it.
-It focuses on writing Markdown notes and code snippets quickly, and get organized in a better way.
 
 \paragraph*{Latex}
 \latex{} is a tool used to create professional-looking documents. It is based on the WYSIWYM (what we see is what we mean) idea, meaning we only have to focus on the contents of our document and the computer will take care of the formatting. Instead of spacing out text on a page to control formatting, as with Microsoft Word or LibreOffice Writer, users can enter plain text and let LATEX take care of the rest.
-\paragraph*{MiKTex}
-MiKTeX provides the tools necessary to prepare documents using the TeX/LaTeX markup language, as well as a simple tex editor: TeXworks.
+% \paragraph*{MiKTex}
+% MiKTeX provides the tools necessary to prepare documents using the TeX/LaTeX markup language, as well as a simple tex editor: TeXworks.
 
-\paragraph*{Tex Live}
-TeX Live is intended to be a straightforward way to get up and running with the TeX document production system. It provides a comprehensive TeX system with binaries for most flavors of Unix, including GNU/Linux, macOS, and also Windows. It includes all the major TeX-related programs, macro packages, and fonts that are free software, including support for many languages around the world. Many operating systems provide it via their distributions.
+% \paragraph*{Tex Live}
+% TeX Live is intended to be a straightforward way to get up and running with the TeX document production system. It provides a comprehensive TeX system with binaries for most flavors of Unix, including GNU/Linux, macOS, and also Windows. It includes all the major TeX-related programs, macro packages, and fonts that are free software, including support for many languages around the world. Many operating systems provide it via their distributions.
 
 
 
 \paragraph*{Markdown}
 Markdown is a lightweight markup language with plain-text-formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+
 \paragraph*{Marp}
 Marp is the ecosystem to write our presentation with plain Markdown.
 
@@ -131,7 +112,7 @@ Marp is the ecosystem to write our presentation with plain Markdown.
 % section
 \section{Platform security}
 Security is a constant worry when it comes to information technology. Data theft, hacking, malware, and a host of other threats are enough to keep any IT professional up at night. In this article, we’ll look at the basic principles and best practices that IT professionals use to keep their systems safe.
-\\
+
 When you create a website or application, it means you are ready to show thousands of people on the internet. Your customer/audience may be legit, but some of them will try to tamper your application. So we need to follow the following golden rules:
 \begin{enumerate}
       \item 
@@ -154,7 +135,8 @@ The main three overarching principles in information security are:
 \end{enumerate}
 
 \subsection{Physical level}
-For the Physical level, we will be hosting and deploying our application to an IaaS cloud service, the main reason to use the cloud services is the ability they provide to our application to be decentralized, and available all time.\\
+For the Physical level, we will be hosting and deploying our application to an IaaS cloud service, the main reason to use the cloud services is the ability they provide to our application to be decentralized, and available all time.
+
 Physical security on IaaS is managed by one or several processes, which include:
 \begin{enumerate}
       \item 
@@ -176,11 +158,13 @@ Physical security on IaaS is managed by one or several processes, which include:
 \end{enumerate}
 \subsection{Logical level}
 Logical Security consists of software safeguards for an organization's systems, including user identification and password access, authenticating, access rights, and authority levels. These measures are to ensure that only authorized users are able to perform actions or access information in a network or a workstation.
-We have implemented multiple levels and layers of security to control the integrity of the data exchanged between our users and Sahem platform, from creating form controls to ensure that the data sent from the user is well structured, and when received on the controller, we created multiple layers and implemented some great middlewares and libraries to help us protect the system from different vulnerabilities.\\
+We have implemented multiple levels and layers of security to control the integrity of the data exchanged between our users and Sahem platform, from creating form controls to ensure that the data sent from the user is well structured, and when received on the controller, we created multiple layers and implemented some great middlewares and libraries to help us protect the system from different vulnerabilities.
+
 And for the Confidentiality, on the Frontend we put guards on our routes, to only give some specific users the accessibility to the functionalities they have the permission to do, and when a request is received on the controller, we check the user's Identity, and check if they are allowed to take the action requested.
 \subsubsection{Stripe Payment API}
 Stripe was founded in 2010 with the mission of making it easier to accept payments over the internet. At the time, taking credit cards meant working with a legacy processor or a middleman broker who would provide you with access to a processor.
-Stripe has been audited by a PCI-certified auditor and is certified to PCI Service Provider Level 1. This is the most stringent level of certification available in the payments industry. \\
+Stripe has been audited by a PCI-certified auditor and is certified to PCI Service Provider Level 1. This is the most stringent level of certification available in the payments industry.
+
 They use the best-in-class security tools and practices to maintain a high level of security at Stripe:
 \begin{enumerate}
       \item HTTPS and HSTS for secure connections
@@ -188,7 +172,8 @@ They use the best-in-class security tools and practices to maintain a high level
       \item PGP keys to encrypt your communications with Stripe
 \end{enumerate}
 \subsubsection{Frontend}
-Angular has some great protections against common web-application vulnerabilities and attacks to provide it's applications with a good, and secure experience, preventing cross-site scripting \ac{XSS} that prevent attackers from injecting malicious code into web pages. Such code can then, for example, steal user data (in particular, login data) or perform actions to impersonate the user. This is one of the most common attacks on the web.\\
+Angular has some great protections against common web-application vulnerabilities and attacks to provide it's applications with a good, and secure experience, preventing cross-site scripting \ac{XSS} that prevent attackers from injecting malicious code into web pages. Such code can then, for example, steal user data (in particular, login data) or perform actions to impersonate the user. This is one of the most common attacks on the web.
+
 And has built-in support to help prevent two common HTTP vulnerabilities, cross-site request forgery (\ac{CSRF} or XSRF) and cross-site script inclusion \ac{XSSI}. Both of these must be mitigated primarily on the server-side, but Angular provides helpers to make integration on the client-side easier.
 
 \paragraph*{Route Guards}
@@ -229,7 +214,7 @@ Morgan is a library adds some logging capabilities to our Express API.
 \paragraph*{Cross-Origin Resource Sharing}
 We will use Cors dependency to configure Express to add headers stating that your API accepts requests coming from other origins. This is known as Cross-Origin Resource Sharing \ac{CORS}.
 \paragraph*{Server's Information}
-Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology \ref{web004}.
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology \cite{web004}.
 
 
 % section
