@@ -217,25 +217,216 @@ We will use Cors dependency to configure Express to add headers stating that you
 Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology \cite{web004}.
 
 
+
+
+
+\section{Project Tests}
+Project testing and validation is the last step of the software engineering process. The
+Testing is conducted during or after the implementation in order to ascertain that the product is
+compliant with the requirements and modeling specifications initially stipulated in the
+analysis and design phase, i.e. whether or not the product, Sahem Crowdfunding Platform
+in our case, satisfies and meets the needs, requirements, and design initially stipulated.
+The testing process for our application comprised of Unite testing through Jasmine and Karma for
+the angular application, and Mockgoose for our express js controller, then use Protractor.js to perform
+end to end testing.
+This is achieved by test targeting specific and small portions of code such as individual classes or
+functions. 
+The Integration Testing is done by verifying and testing the interaction between the
+different components of our app as they were integrated in addition to the data flow between
+them.
+ Many errors and system failures occurred during this step and are being dealt
+with. Concerning System Testing, this is conducted by testing the system as a whole to ensure
+that the requirements, both functional and non-functional are met. The final step of the testing
+phase, which represents the Acceptance Testing will be conducted by \mentor to see whether the project
+meets the requirements stated earlier or not.
+% Karma for angular
+% Mockgoose for mongoose
+% Protractor.js end to end testing
+
 % section
+
+\section{Deployment}
 % section
-% section
+% 
+Today, there exist multiple PaaS on the internet, that gives a lot of rich environments with NodeJs
+included. Sadly, most of them are paid, and those that provide the free tier services, puts a lot
+of constraints on the application, such as Heroku, that we will be using to deploy our application,
+it does delete all the static files on every server restart, and shuts down the server when it does
+not receive any request for some time. But one of the positive points was that we could deploy the
+application by linking it to the development repository on Github.
+
+
+\url{https://sahem.herokuapp.com/}
+
+% heroku free tier 
 
 \section{Interfaces}
 % section
 % section
 % section
 
-\section{tests}
+One of the main requirements for our Frontend application was to create a responsive design to fit our
+application in different devices and screen sizes. 
 
-% Karma for angulars
-% Mockgoose for mongoose
-% Protractor.js end to end testing
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/allDevices.png}
+      \caption{Responsive Design}
+      \label{fig:all devices}
+\end{figure}
+
+%%%%%%%%%%%% main %%%%%%%%
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-main-navbar.png}
+      \caption{Sahem Main Page - Navbar Activated}
+      \label{fig:sahem main}
+\end{figure}
+
+The application comes with different themes and colors to satisfy multiple varieties of users.
+\begin{figure}
+      \centering
+      \begin{subfigure}[H]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{assets/screen-main-gre.png}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}[H]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{assets/screen-main-grey.png}
+      \end{subfigure}
+      
+ \end{figure}
+
+ \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-main-test.png}
+      % \label{fig:all devices}
+\end{figure}
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-main-foot.png}
+      % \label{fig:all devices}
+\end{figure}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%% login register
+The Angular framework provides us with a rich form control experience. With it, we designed and created multiple delicate forms. 
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-login.png}
+      \caption{Login Page}
+      \label{fig:login page}
+\end{figure}
+
+\begin{figure}
+      \centering
+      \begin{subfigure}[H]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{assets/screen-login-gr.png}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}[H]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{assets/screen-login-grey.png}
+      \end{subfigure}
+  
+ \end{figure}
+
+
+
+% register
+
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-register-d.png}
+      \caption{Register Page}
+      \label{fig:register page}
+\end{figure}
+
+%%%%%%%%%%%%%%%% create
+
+A form that allows the user to create a fundraiser.
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-fundraiser-creator.png}
+      \caption{Fundraiser Form}
+      \label{fig:fundraiser form}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%% fundraisers
+
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-fundraisers-list.png}
+      \caption{Fundraisers List}
+      \label{fig:fundraisers list}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%% fundraiser
+
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-fundraiser-view.png}
+      \caption{Fundraiser View}
+      \label{fig:fundraiser view}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%% profile
+% profile create
+When a user accesses his profile for the first time, he will be asked to fill the following form 
+to create his Profile, he won't be able to create a project otherwise.
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-profile-creator.png}
+      \caption{Profile Form}
+      \label{fig:profile form}
+\end{figure}
+
+% profile view
+For every user there exist a profile that holds his information, and showcase the different fundraiser 
+he created and successfully funded.
+\begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.45]{assets/screen-profile-da.png}
+      \caption{Profile Page}
+      \label{fig:profile view}
+\end{figure}
+
+\begin{figure}
+      \centering
+      \begin{subfigure}[H]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{assets/screen-profile-gre.png}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}[H]{0.45\textwidth}
+          \centering
+          \includegraphics[width=\textwidth]{assets/screen-profile-grey.png}
+      \end{subfigure}
+  
+ \end{figure}
+
+
 
 % section
 % section
 % section
 % section
 
-\section{Deployment}
 
