@@ -13,7 +13,7 @@
 \section{Hardware Environments}
 
 \subsection{Development hardware }
-The good news is that you don’t need anything particularly special to run the development of mean stack. A single laptop or even a virtual machine \ac{VM} is enough to develop a MEAN application. All components of the stack can be installed on Windows, macOS, and most Linux distributions.
+The good news is that you don’t need anything particularly special to run the development of mean stack. A single laptop or even a \ac{VM} is enough to develop a MEAN application. All components of the stack can be installed on Windows, macOS, and most Linux distributions.
 
 \subsection{Production hardware }
 The approach to production hardware architecture isn’t all that different from development hardware. The main difference is that production hardware is normally higher-spec and open to the internet to receive public requests.
@@ -67,7 +67,7 @@ A large software project often makes use of many third-party packages and librar
 often rely on several other packages and so on. To keep track of all these dependencies, software developers
 use-package managers. Below we introduce the ones we have used.
 \paragraph*{Node Package Manager}
-Node Package Manager \ac{NPM}, is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with the said repository that aids in package installation, version management, and dependency management.
+\ac{NPM}, is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with the said repository that aids in package installation, version management, and dependency management.
 \paragraph*{Angular CLI}
 The Angular CLI is a command-line interface tool that we use to initialize, develop, scaffold, and maintain Angular applications. 
 \subsubsection{IDEs}
@@ -172,9 +172,9 @@ They use the best-in-class security tools and practices to maintain a high level
       \item PGP keys to encrypt your communications with Stripe
 \end{enumerate}
 \subsubsection{Frontend}
-Angular has some great protections against common web-application vulnerabilities and attacks to provide it's applications with a good, and secure experience, preventing cross-site scripting \ac{XSS} that prevent attackers from injecting malicious code into web pages. Such code can then, for example, steal user data (in particular, login data) or perform actions to impersonate the user. This is one of the most common attacks on the web.
+Angular has some great protections against common web-application vulnerabilities and attacks to provide it's applications with a good, and secure experience, preventing \ac{XSS} that prevent attackers from injecting malicious code into web pages. Such code can then, for example, steal user data (in particular, login data) or perform actions to impersonate the user. This is one of the most common attacks on the web.
 
-And has built-in support to help prevent two common HTTP vulnerabilities, cross-site request forgery (\ac{CSRF} or XSRF) and cross-site script inclusion \ac{XSSI}. Both of these must be mitigated primarily on the server-side, but Angular provides helpers to make integration on the client-side easier.
+And has built-in support to help prevent two common HTTP vulnerabilities, \ac{CSRF} or XSRF and \ac{XSSI}. Both of these must be mitigated primarily on the server-side, but Angular provides helpers to make integration on the client-side easier.
 
 \paragraph*{Route Guards}
 Angular’s route guards are interfaces that can tell the router whether or not it should allow navigation to a requested route. They make this decision by looking for a true or false return value from a class that implements the given guard interface.
@@ -212,7 +212,7 @@ Express-mongo-sanitize is a middleware that sanitizes user-supplied data to prev
 Morgan is a library adds some logging capabilities to our Express API.
 
 \paragraph*{Cross-Origin Resource Sharing}
-We will use Cors dependency to configure Express to add headers stating that your API accepts requests coming from other origins. This is known as Cross-Origin Resource Sharing \ac{CORS}.
+We will use Cors dependency to configure Express to add headers stating that your API accepts requests coming from other origins. This is known as \ac{CORS}.
 \paragraph*{Server's Information}
 Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology \cite{web004}.
 
